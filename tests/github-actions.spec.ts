@@ -15,5 +15,8 @@ test.describe(`Salesforce login - GitHub Actions`,async()=>{
 
         const viewAllLocator = page.getByLabel("View All Applications")
         await viewAllLocator.click()
+
+        await page.getByPlaceholder("Search apps or items...").fill("Marketing");
+        await page.click('mark:has-text("Marketing")');
     })
 })
